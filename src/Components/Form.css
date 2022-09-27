@@ -1,0 +1,39 @@
+button {
+    background-color: #d8d502; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    margin: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 10px;
+    font-size: 16px;
+  }
+
+input[type=text] {
+    align-items: right;
+    background-color: white;
+    width: 150px;   
+    border-radius: 5px;
+    color: black;
+    padding-left: 10px;
+} 
+button:hover{
+    background-color: #b1af31;
+}
+
+.add_field {
+    float: left;
+    margin: 0px 10px;
+    width: 30%;
+    height: 85vh;
+    background-color: bisque;
+    padding-left: 15px;
+}
+.show_form {
+    float: right;
+    width: 50%;
+    margin: 0px 10px;
+}
+  

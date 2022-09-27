@@ -1,0 +1,19 @@
+
+.template_section {
+    background-color: #dcf0f6;
+    margin: 0px 10px;
+    padding-bottom: 40px;
+    padding-top: 7px;
+}
+.template_top {
+    margin-left: 180px;
+    margin-right: 180px;
+    justify-content: center;
+    display: flex;
+}
+.template_body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+}

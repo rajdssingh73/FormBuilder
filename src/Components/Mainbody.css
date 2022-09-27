@@ -1,0 +1,19 @@
+
+.main_body {
+    background-color: #e9f2cc;
+    margin: 0px 10px;
+    padding-bottom: 40px;
+    padding-top: 7px;
+}
+.mainbody_top {
+    margin-left: 180px;
+    margin-right: 180px;
+    justify-content: center;
+    display: flex;
+}
+.mainbody_docs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+}
