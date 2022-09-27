@@ -3,7 +3,14 @@
     background-color: #e9f2cc;
     margin: 0px 10px;
     padding-bottom: 40px;
-    padding-top: 7px;
+    padding-top: 30px;
+}
+
+.main_create_form {
+    background-color: #dcf0f6;
+    margin: 0px 10px;
+    padding-bottom: 40px;
+    padding-top: 30px;
 }
 .mainbody_top {
     margin-left: 180px;

@@ -1,15 +1,24 @@
 import React, { useEffect, useState } from "react";
-import './Form.css';
+import { useForm } from "../Context/FormContext";
+import "./Form.css";
 import Header from "./Header";
 
-function Form({ addToList }) {
+function Form() {
+  const { addToList, list } = useForm();
   const [selected, setSelected] = useState({});
   const [fields, setFields] = useState([]);
-  const [inputType, setInputType] = useState("string");
+  const [inputType, setInputType] = useState("");
   const [data, setData] = useState({
     metadata: {},
     data: {},
   });
+
+  useEffect(() => {
+    if (list.length !== 0) {
+      // console.log([...Object.values(list[list.length - 1].data)]);
+      setFields([...Object.values(list[list.length - 1].data)]);
+    }
+  }, []);
 
   const [field, setField] = useState({
     title: "",
@@ -64,6 +73,7 @@ function Form({ addToList }) {
   }, [fields]);
 
   const addField = () => {
+    console.log(field);
     setFields((prev) => [...prev, field]);
   };
 
@@ -94,13 +104,15 @@ function Form({ addToList }) {
   };
 
   const handleSubmit = () => {
-    addToList({
+    let dataToAdd = {
       ...data,
       metadata: {
         ...data.metadata,
         createTime: new Date().toLocaleDateString(),
       },
-    });
+    };
+    // setList((prev) => [...prev, dataToAdd]);
+    addToList(dataToAdd);
     // setData(field);
   };
 
@@ -137,10 +149,9 @@ function Form({ addToList }) {
   // }, [data]);
 
   return (
-    
-    <div className="Form"><Header />
+    <div className="Form">
       <div className="add_field">
-        <h3 style={{textAlign:"center"}}>Create New Form</h3>
+        <h3 style={{ textAlign: "center" }}>Create New Form</h3>
         <h4>
           <label htmlFor="formId">Form Id : </label>
           <input
@@ -161,7 +172,7 @@ function Form({ addToList }) {
         </h4>
 
         <div>
-            <h3> Add New Field</h3>
+          <h3> Add New Field</h3>
           <label htmlFor="title">Title: </label>
 
           <input
@@ -191,7 +202,7 @@ function Form({ addToList }) {
           />
           <br /> */}
           <span>Select Type: </span>
-         
+
           <label htmlFor="inputType">String</label>
           <input
             type="radio"
@@ -223,7 +234,7 @@ function Form({ addToList }) {
         </div>
       </div>
       <div className="show_form">
-        <h3>Your Form will be Generated Here  </h3>
+        <h3>Your Form will be Generated Here </h3>
 
         {Object.keys(data.data).map((item, index) => {
           return (
